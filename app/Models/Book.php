@@ -11,6 +11,6 @@ class Book extends Model
     protected $fillable = ['name','ISBN', 'value'];
 
     public function stores() {
-        return $this->belongsToMany(Store::class, 'book_store', 'store_id', 'book_id');
+        return $this->belongsToMany(Store::class, 'book_store', 'book_id', 'store_id');
     }
 }
