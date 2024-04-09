@@ -28,7 +28,7 @@ And then, post the following body as the example:
 ```json
 {
     "name": "Marcos R.",
-    "email": "mrphp7@gmail.com",
+    "email": "test@gmail.com",
     "password": "12345678"
 }
 ```
@@ -49,7 +49,7 @@ If you're using Postman or Insomnia, add Accept application/json header in order
 POST to http://localhost:8989/api/login
 ```json
 {
-    "email": "mrphp7@gmail.com",
+    "email": "test@gmail.com",
     "password": "12345678"
 }
 ```
