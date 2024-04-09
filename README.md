@@ -130,8 +130,8 @@ You can expect something like this when getting a response for a store listing:
 				"created_at": "2024-04-09T22:34:52.000000Z",
 				"updated_at": "2024-04-09T22:34:52.000000Z",
 				"pivot": {
-					"book_id": 1,
-					"store_id": 1
+					"store_id": 1,
+					"book_id": 1
 				}
 			},
 			{
@@ -140,10 +140,10 @@ You can expect something like this when getting a response for a store listing:
 				"ISBN": 111111111,
 				"value": "10.50",
 				"created_at": "2024-04-09T22:35:01.000000Z",
-				"updated_at": "2024-04-09T22:35:01.000000Z",
+				"updated_at": "2024-04-09T22:53:20.000000Z",
 				"pivot": {
-					"book_id": 1,
-					"store_id": 2
+					"store_id": 1,
+					"book_id": 2
 				}
 			}
 		]
