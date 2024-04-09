@@ -2,10 +2,21 @@
 
 A simple CRUD API example with Laravel, with Authentication.
 
+## Setup
+After cloning the project, run the following commands:
+```bash
+docker-compose build
+docker-compose up -d
+docker exec app php artisan migrate
+```
+After running those commands, you should have a container running the application and another one running mysql database, and a Nginx server.
+You can test by running:
+
+http://localhost:8989/
 
 ## Register a User
 
-After running the docker-compose, and running the migration, just send a post request to:
+After running the docker-compose, and running the migration, just send a post request to: (you can use postman or insomnia)
 
 http://localhost:8989/api/register
 
