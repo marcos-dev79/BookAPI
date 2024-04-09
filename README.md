@@ -46,7 +46,15 @@ Once you register, automatically the API logins you in. You will use the access_
 ## Logout
 
 
-## Create a Store
+## Create, Update, Delete a Store
 
 
-## Create a Book
+## Create, Update, Delete a Book
+```json
+{
+	"name":"Voyage to the center of the Earth",
+	"ISBN": 111111111,
+	"value": 10.5,
+	"store_id": 1
+}
+```

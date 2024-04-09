@@ -14,7 +14,7 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return Store::all();
+        return Store::with('books')->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class StoreController extends Controller
      */
     public function show($id)
     {
-        return Store::find($id);
+        return Store::with('books')->find($id);
     }
 
     /**
@@ -67,4 +67,5 @@ class StoreController extends Controller
 
         return response()->json(['message' => 'Store deleted'], 204);
     }
+
 }

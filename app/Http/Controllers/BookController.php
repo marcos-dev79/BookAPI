@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        return Book::all();
+        return Book::with('stores')->get();
     }
 
     /**
@@ -25,7 +25,16 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create($request->all());
+        $store = $request->input('store_id');
+
+        $book = new Book();
+        $book->name = $request->name;
+        $book->ISBN = $request->ISBN;
+        $book->value = $request->value;
+        $book->save();
+
+        $book->stores()->attach($store);
+
         return response()->json(['message' => 'Book created'], 201);
     }
 
@@ -37,7 +46,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        return Book::find($id);
+        return Book::with('stores')->find($id);
     }
 
     /**
@@ -51,6 +60,7 @@ class BookController extends Controller
     {
         $book = Book::find($id);
         $book->update($request->all());
+        $book->stores()->sync($request->input('store_id'));
         return response()->json(['message' => 'Book updated'], 200);
     }
 
@@ -64,7 +74,9 @@ class BookController extends Controller
     {
         $book = Book::find($id);
         $book->delete();
+        $book->stores()->detach();
 
         return response()->json(['message' => 'Book deleted'], 204);
     }
+
 }
